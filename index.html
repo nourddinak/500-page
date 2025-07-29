@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Maintenance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+        :root {
+            --background-color: #F3F4F6; /* Light Gray */
+            --text-color: #1F2937;       /* Dark Gray */
+            --primary-color: #3B82F6;    /* Blue */
+            --subtle-gray: #6B7280;      /* Medium Gray */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 550px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .status-badge {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background-color: #FEF3C7; /* Light Yellow */
+            color: #9A3412; /* Dark Amber */
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .status-badge .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #F59E0B; /* Amber */
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+            }
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--subtle-gray);
+            margin-bottom: 32px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        
+        .button.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .button.primary:hover {
+            background-color: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .button.secondary {
+            background-color: #FFFFFF;
+            color: var(--text-color);
+            border: 1px solid #D1D5DB; /* Border Gray */
+        }
+        
+        .button.secondary:hover {
+            border-color: #9CA3AF;
+            background-color: #F9FAFB;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+    
+        <div class="status-badge">
+            <span class="dot"></span>
+            Error 500: Server Issue
+        </div>
+
+        <h1>Something went wrong on our end.</h1>
+        
+        <p>We've detected a temporary problem with our server. <strong>We are working hard to fix it</strong> and get things back to normal as quickly as possible. Please try refreshing the page in a few moments.</p>
+
+        <div class="button-container">
+            <a href="javascript:location.reload();" class="button primary">Refresh Page</a>
+            <a href="/" class="button secondary">Go to Homepage</a>
+        </div>
+        
+    </div>
+
+    <script>
+        // Minimal JS for functionality is embedded directly in the HTML links.
+        // Example: javascript:location.reload(); for the refresh button.
+    </script>
+</body>
+</html>
